@@ -1,0 +1,7 @@
+<h4>Seleziona Mese</h4>
+<%= form_tag(controller: "stats", action: "create", method: "post", class: "stats") %> 
+<p>Data inizio: <br />
+<%= select_date(@data, :prefix => 'data', :order => [:day, :month, :year]) %> 
+</p>
+<%= submit_tag value='Crea Statistica' %>
+ <br />

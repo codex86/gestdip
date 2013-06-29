@@ -1,0 +1,29 @@
+<%= form_for(@forecast) do |f| %>
+  <% if @forecast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@forecast.errors.count, "error") %> prohibited this forecast from being saved:</h2>
+
+      <ul>
+      <% @forecast.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :giorno %><br />
+    <%= f.date_select :giorno %>
+  </div>
+  <div class="field">
+    <%= f.label :prefshift_id %><br />
+    <%= f.collection_select :prefshift_id, Prefshift.all, :id, :cod %> 
+  </div>
+  <div class="field">
+    <%= f.label :employee_id %><br />
+     <%= f.collection_select :employee_id, Employee.all, :id, :matricola %> 
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

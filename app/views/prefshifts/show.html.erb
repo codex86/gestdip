@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cod:</b>
+  <%= @prefshift.cod %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @prefshift.nome %>
+</p>
+
+<p>
+  <b>Descrizione:</b>
+  <%= @prefshift.descr %>
+</p>
+
+<p>
+  <b>Stato:</b>
+  <%= @prefshift.stato %>
+</p>
+
+<p>
+  <b>Inizio:</b>
+  <%= @prefshift.inizio %>
+</p>
+
+<p>
+  <b>Fine:</b>
+  <%= @prefshift.fine %>
+</p>
+
+
+<%= link_to 'Modifica', edit_prefshift_path(@prefshift) %> |
+<%= link_to 'Torna indietro', prefshifts_path %>

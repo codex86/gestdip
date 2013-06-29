@@ -1,0 +1,52 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :matricola %><br />
+    <%= f.text_field :matricola %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :cognome %><br />
+    <%= f.text_field :cognome %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_id %><br />
+    <%= f.collection_select :contract_id, Contract.all, :id, :cod %> 
+  </div>
+    <% for prefshift in Prefshift.find(:all) %>  
+    <div>
+      <%= check_box_tag "employee[prefshift_ids][]", prefshift.id, @employee.prefshifts.include?(prefshift) %>
+      <%= prefshift.cod %>
+    </div>  
+    <% end %> 
+	 <%= hidden_field_tag "employee[prefshift_ids][]" %> 
+  <div class="field">
+    <%= f.label :malattia %><br />
+    <%= f.check_box :malattia %>
+  </div>
+  <div class="field">
+    <%= f.label :acceso %><br />
+    <%= f.check_box :acceso %>
+  </div>
+  <div class="field">
+    <%= f.label :dataAssunzione %><br />
+    <%= f.date_select :dataAssunzione %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

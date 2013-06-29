@@ -1,0 +1,41 @@
+<h4>Lista Dipendenti</h4>
+
+<table id="employees">
+  <thead><tr>
+    <th>Matricola</th>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Contratto</th>
+    <th>Malattia</th>
+    <th>Acceso</th>
+    <th>Data Assunzione</th>
+    <th>Azioni</th>
+  </tr></thead>
+
+  <tbody>
+  <% @employees.each do |employee|%>
+  <tr>
+    <td><%= employee.matricola %></td>
+    <td><%= employee.nome %></td>
+    <td><%= employee.cognome %></td>
+    <td><%= employee.contract.cod %></td>
+    <td><%= employee.malattia %></td>
+    <td><%= employee.acceso %></td>
+    <td><%= employee.dataAssunzione %></td>
+    <td value=""><%= link_to employee do %>
+		<i class="icon-eye-open"></i> 
+		<%end%>
+		<%= link_to edit_employee_path(employee) do %>
+		<i class="icon-pencil"></i> 
+		<%end%>
+    	<%= link_to employee, method: :delete, data: { confirm: 'Sei sicuro?' } do%>
+		<i class="icon-trash"></i> 
+		<%end%>
+	</td>
+  </tr></thead>
+<% end %></tbody>
+</table>
+
+<br />
+
+<%= link_to 'Nuovo Dipendente', new_employee_path %>

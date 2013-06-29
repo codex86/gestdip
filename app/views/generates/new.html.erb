@@ -1,0 +1,5 @@
+<%= form_tag(controller: "generates", action: "create", method: "post", class: "generates") %> 
+<p>Data inizio: <br />
+<%= select_date(@data, :prefix => 'data', :order => [:day, :month, :year]) %> 
+</p>
+<%= submit_tag value='Genera Turni' %>

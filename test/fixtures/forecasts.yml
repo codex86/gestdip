@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  giorno: 2013-06-07
+  prefshift_id: 1
+  employee_id: 1
+
+two:
+  giorno: 2013-06-07
+  prefshift_id: 1
+  employee_id: 1

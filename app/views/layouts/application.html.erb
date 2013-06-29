@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gestdip</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag 'jquery', 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>	
+	<div class="wrapper">
+		<div class="menup">
+			<!-- Menu Horizontal -->
+			<ul class="menu">
+			<li class="current"><a href="<%= home_path %>"><i class="icon-home"></i></a></li>
+			<li><a href="<%= generates_path %>"><i class="icon-magic"></i> Genera</a></li>
+			<li><a href=""><i class="icon-cogs"></i> Impostazioni</a>
+				<ul>
+				<li><a href="<%= prefshifts_path %>"><i class="icon-sitemap"></i> Turni</a></li>
+				<li><a href="<%= employees_path %>"><i class="icon-group"></i> Dipendenti</a></li>
+				<li><a href="<%= contracts_path %>"><i class="icon-folder-close"></i> Contratti</a></li>
+				<li><a href="<%= forecasts_path %>"><i class="icon-calendar"></i> Previsione</a></li>
+				<li class="divider"><a href=""><i class="icon-wrench"></i> Gestione Utente</a></li>
+				</ul>
+			</li>
+			<li><a href="">About</a></li>
+			</ul>
+		</div> <!-- Fine Div Menu-->
+		<div class="corpo">
+			 <%= yield %>
+		</div> <!-- Fine Div Corpo-->
+		<div class="footer">
+		</div><!--Fine Div Footer-->
+	</div><!--Fine Div Wrapper-->
+</body>
+</html>

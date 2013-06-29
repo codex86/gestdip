@@ -1,0 +1,32 @@
+<h4>Lista contratti</h4>
+
+<table id="contracts">
+  <thead><tr>
+    <th>Codice</th>
+    <th>Nome</th>
+    <th>Descrizione</th>
+    <th>Azioni</th>
+  </tr></thead>
+
+<tbody>
+<% @contracts.each do |contract| %>
+    <td><%= contract.cod %></td>
+    <td><%= contract.nome %></td>
+    <td><%= contract.descrizione %></td>
+    <td value=""><%= link_to contract do %>
+		<i class="icon-eye-open"></i> 
+		<%end%>
+		<%= link_to edit_contract_path(contract) do %>
+		<i class="icon-pencil"></i> 
+		<%end%>
+    	<%= link_to contract, method: :delete, data: { confirm: 'Sei sicuro?' } do%>
+		<i class="icon-trash"></i> 
+		<%end%>
+	</td>
+  </tr>
+<% end %></tbody>
+</table>
+
+<br />
+
+<%= link_to 'Nuovo Contratto', new_contract_path %>

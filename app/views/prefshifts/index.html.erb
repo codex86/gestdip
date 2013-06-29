@@ -1,0 +1,38 @@
+<h4>Lista Turni</h4>
+
+<table id="prefshifts">
+  <thead><tr>
+    <th>Codice</th>
+    <th>Nome</th>
+    <th>Descrizione</th>
+    <th>Stato</th>
+    <th>Inizio</th>
+    <th>Fine</th>
+    <th>Azioni</th>
+  </tr></thead>
+
+<tbody>
+<% @prefshifts.each do |prefshift| %>
+    <td><%= prefshift.cod %></td>
+    <td><%= prefshift.nome %></td>
+    <td><%= prefshift.descr %></td>
+    <td><%= prefshift.stato %></td>
+    <td><%= prefshift.inizio.to_s(:time)    %></td>
+    <td><%= prefshift.fine.to_s(:time)    %></td>
+    <td value=""><%= link_to prefshift do %>
+		<i class="icon-eye-open"></i> 
+		<%end%>
+		<%= link_to edit_prefshift_path(prefshift) do %>
+		<i class="icon-pencil"></i> 
+		<%end%>
+    	<%= link_to prefshift, method: :delete, data: { confirm: 'Sei sicuro?' } do%>
+		<i class="icon-trash"></i> 
+		<%end%>
+	</td>
+  </tr>
+<% end %></tbody>
+</table>
+
+<br />
+
+<%= link_to 'Nuovo Turno', new_prefshift_path %>

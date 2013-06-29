@@ -1,0 +1,26 @@
+<h4>Statistica</h4>
+
+<table class="sortable" cellspacing="0" cellpadding="0">
+  <thead><tr>
+    <th>Dipendete</th>
+    <th>Ore</th>
+    <th>Numero Turni</th>
+	<th>Azioni</th>
+  </tr></thead>
+
+<tbody>
+<% @array.each do |arr| %>
+  <tr>
+    <td><%= arr.at(0).matricola %></td>
+    <td><%=  arr.at(1) %></td>
+    <td><%=  arr.at(2) %></td>
+    <td value=""><%= link_to  do %>
+		<i class="icon-eye-open"></i> 
+		<%end%>
+	</td>
+  </tr>
+<% end %></tbody>
+</table>
+
+<br />
+

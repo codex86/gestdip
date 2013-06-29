@@ -1,0 +1,24 @@
+<h4>Lista Giorni Settimana</h4>
+
+<table id="ggsettimanas">
+  <thead><tr>
+    <th>Giorni</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr></thead>
+
+<tbody>
+<% @ggsettimanas.each do |ggsettimana| %>
+  <tr class="<%= cycle('alt', '') %>">
+    <td><%= ggsettimana.gg %></td>
+    <td><%= link_to 'visualizza', ggsettimana %></td>
+    <td><%= link_to 'Modifica', edit_ggsettimana_path(ggsettimana) %></td>
+    <td><%= link_to 'Elimina', ggsettimana, method: :delete, data: { confirm: 'Sei sicuro?' } %></td>
+  </tr>
+<% end %></tbody>
+</table>
+
+<br />
+
+<%= link_to 'Nuovo Giorno Settimana', new_ggsettimana_path %>

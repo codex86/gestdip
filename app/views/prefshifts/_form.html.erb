@@ -1,0 +1,48 @@
+<%= form_for(@prefshift) do |f| %>
+  <% if @prefshift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prefshift.errors.count, "error") %> prohibited this prefshift from being saved:</h2>
+
+      <ul>
+      <% @prefshift.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cod %><br />
+    <%= f.text_field :cod %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :descr %><br />
+    <%= f.text_area :descr %>
+  </div>
+  <div class="field">
+    <%= f.label :stato %><br />
+    <%= f.check_box :stato %>
+  </div>
+  <div class="field">
+    <%= f.label :inizio %><br />
+    <%= f.time_select :inizio %>
+  </div>
+  <div class="field">
+    <%= f.label :fine %><br />
+    <%= f.time_select :fine %>
+  </div>
+  <% for ggsettimana in Ggsettimana.find(:all) %>  
+  <div>
+    <%= check_box_tag "prefshift[ggsettimana_ids][]", ggsettimana.id, @prefshift.ggsettimanas.include?(ggsettimana) %>
+    <%= ggsettimana.gg %>
+  </div>  
+  <% end %> 
+  <%= hidden_field_tag "prefshift[ggsettimana_ids][]" %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

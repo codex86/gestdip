@@ -1,0 +1,48 @@
+<h4>Lista dei dipendenti disponibili</h4>
+
+<table class="sortable" cellspacing="0" cellpadding="0">
+  <thead><tr>
+    <th>Matricola</th>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Contratto</th>
+  </tr></thead>
+
+  <tbody>
+  <% @employees.each do |employee| %>
+    <td><%= employee.matricola %></td>
+    <td><%= employee.nome %></td>
+    <td><%= employee.cognome %></td>
+    <td><%= employee.contract.cod %></td>
+  </tr></thead>
+<% end %></tbody>
+</table>
+  
+
+<br />
+
+<h4>Lista turni da assegnare</h4>
+
+<table class="sortable" cellspacing="0" cellpadding="0">
+  <thead><tr>
+    <th>Codice</th>
+    <th>Nome</th>
+    <th>Descrizione</th>
+    <th>Inizio</th>
+    <th>Fine</th>
+  </tr></thead>
+
+<tbody>
+<% @prefshifts.each do |prefshift| %>
+    <td><%= prefshift.cod %></td>
+    <td><%= prefshift.nome %></td>
+    <td><%= prefshift.descr %></td>
+    <td><%= prefshift.inizio.to_s(:time)    %></td>
+    <td><%= prefshift.fine.to_s(:time)    %></td>
+  </tr>
+<% end %><tbody>
+</table>
+
+<br />
+
+<%= link_to 'Genera Turni', new_generate_path %>

@@ -1,0 +1,33 @@
+<h4>Turni di Lavoro</h4>
+
+<table id="forecasts">
+  <thead><tr>
+    <th>Giorno</th>
+    <th>Turno</th>
+    <th>Dipendente</th>
+    <th>Azioni</th>
+  </tr></thead>
+
+<tbody>
+<% @forecasts.each do |forecast| %>
+    <td><%= forecast.giorno %></td>
+	
+    <td><% if(defined? forecast.prefshift != nil) %><%= forecast.prefshift.cod %><%end%></td>
+    <td><% if(defined? forecast.employee != nil) %><%= forecast.employee.matricola %><%end%></td>
+    <td value=""><%= link_to forecast do %>
+		<i class="icon-eye-open"></i> 
+		<%end%>
+		<%= link_to edit_forecast_path(forecast) do %>
+		<i class="icon-pencil"></i> 
+		<%end%>
+    	<%= link_to forecast, method: :delete, data: { confirm: 'Sei sicuro?' } do%>
+		<i class="icon-trash"></i> 
+		<%end%>
+	</td>
+  </tr>
+<% end %></tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Forecast', new_forecast_path %>

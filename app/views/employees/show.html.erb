@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Matricola:</b>
+  <%= @employee.matricola %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @employee.nome %>
+</p>
+
+<p>
+  <b>Cognome:</b>
+  <%= @employee.cognome %>
+</p>
+
+<p>
+  <b>Contratto:</b>
+  <%= @employee.contract_id %>
+</p>
+
+<p>
+  <b>Malattia:</b>
+  <%= @employee.malattia %>
+</p>
+
+<p>
+  <b>Acceso:</b>
+  <%= @employee.acceso %>
+</p>
+
+<p>
+  <b>Data Assunzione:</b>
+  <%= @employee.dataAssunzione %>
+</p>
+
+
+<%= link_to 'Modifica', edit_employee_path(@employee) %> |
+<%= link_to 'Torna indietro', employees_path %>

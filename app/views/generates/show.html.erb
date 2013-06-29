@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<H4>Settimana</H4>
+<table class="sortable" cellspacing="0" cellpadding="0">
+  <thead><tr>
+	<th>Turno</th>
+    <th>Lun</th>
+    <th>Mar</th>
+    <th>Mer</th>
+	<th>Gio</th>
+	<th>Ven</th>
+	<th>Sab</th>
+	<th>Dom</th>
+  </tr></thead>
+
+<tbody>
+<% @results.in_groups_of(8) do |result| %>
+	  <td><% if result.at(0) != "" %><%= result.at(0).prefshift.cod %><% end %></td>
+	  <td><% if result.at(1) != "" %><%= result.at(1).employee.matricola %><% end %></td>
+	  <td><% if result.at(2) != "" %><%= result.at(2).employee.matricola %><% end %></td>
+	  <td><% if result.at(3) != "" %><%= result.at(3).employee.matricola %><% end %></td>
+	  <td><% if result.at(4) != "" %><%= result.at(4).employee.matricola %><% end %></td>
+	  <td><% if result.at(5) != "" %><%= result.at(5).employee.matricola %><% end %></td>
+	  <td><% if result.at(6) != "" %><%= result.at(6).employee.matricola %><% end %></td>
+	  <td><% if result.at(7) != "" %><%= result.at(7).employee.matricola %><% end %></td>
+  </tr>
+  <% end %></tbody>
+  </table>
+
+
+<%= link_to 'Modifica Turni', forecasts_path %>

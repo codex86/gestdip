@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cod: MyString
+  nome: MyString
+  descr: MyText
+  stato: false
+  inizio: 2013-06-05 11:56:15
+  fine: 2013-06-05 11:56:15
+
+two:
+  cod: MyString
+  nome: MyString
+  descr: MyText
+  stato: false
+  inizio: 2013-06-05 11:56:15
+  fine: 2013-06-05 11:56:15
