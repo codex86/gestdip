@@ -5,6 +5,10 @@ capybara-*.html
 .rspec
 /vendor/bundle
 /tmp/*
+
+/.bundle
+/log/*
+/tmp/*
 /public/system/*
 /coverage/
 /spec/tmp/*
@@ -24,5 +28,4 @@ pickle-email-*.html
 *copia
 
 # Ignore all logfiles and tempfiles.
-/log/*
 config/database.yml
