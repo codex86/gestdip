@@ -1,0 +1,28 @@
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/vendor/bundle
+/tmp/*
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+
+.DS_Store 
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*
+/db/*.sqlite3
+/db/*.sqlite3-journal
+*copia
+
+# Ignore all logfiles and tempfiles.
+/log/*
+config/database.yml
